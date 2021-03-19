@@ -3,7 +3,7 @@ const TaskModel =  require('../model/TaskModel');
 class TaskController{
 
     
-    async create(req,resp){
+    async create(req,res){
         const task =  new TaskModel(req.body);
         await task
               .save()//salva no mongo
