@@ -21,14 +21,27 @@ const TaskValidation =  async (req, resp, next) =>{
         return resp.status(400).json({erro:'Data invalida'});
     else{
         //Verifica se ah uma tarefa nessa horário
-        let exists;
+        let exists;     
 
-        exists = await TaskModel
+        if(req.params.id){
+            exists = await TaskModel
                         .findOne(
-                            {
-                            'when':{'$eq': new Date(when)}, 
-                            'macaddress': {'$in': macaddress}
+                            {   
+                                '_id': {'$ne':req.params.id},
+                                'when':{'$eq': new Date(when)}, 
+                                'macaddress': {'$in': macaddress}
+
                             });
+        }else{
+            exists = await TaskModel
+                            .findOne(
+                                {
+                                'when':{'$eq': new Date(when)}, 
+                                'macaddress': {'$in': macaddress}
+                                });
+
+        }
+
         if(exists)
         {
             return resp.status(400).json({erro:'Tarefa existente nesse horário'});
