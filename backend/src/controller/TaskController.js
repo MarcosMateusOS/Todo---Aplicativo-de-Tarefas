@@ -26,6 +26,20 @@ class TaskController{
 
     }
 
+    async all(req,res){
+      await TaskModel
+                .find({ macaddress: {'$in': req.body.macaddress}})//filtadro pelo macaddress
+                .sort('when')//data e hora
+                .then(response =>{
+                   return res.status(200).json(response); //Deu certo o get ALL todas as tasks
+                })
+                .cath(error => {
+                  return res.status(500).json(error);
+                })
+
+    }
+
+
 }
 
 module.exports =  new TaskController();

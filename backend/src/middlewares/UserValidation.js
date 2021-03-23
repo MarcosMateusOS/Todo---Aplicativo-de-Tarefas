@@ -9,7 +9,7 @@ const UserValidation =  async (req,resp,next) =>{
     else if(!email)
         return resp.status(400).json({erro:'Email obrigatório'});
     else if(!password)
-        return reps.status(400).json({erro:'Senha obrigatório'});
+        return resp.status(400).json({erro:'Senha obrigatório'});
     else{
 
         let exists = await User
