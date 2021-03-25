@@ -4,6 +4,13 @@ const Schema =  mongoose.Schema;
 
 //Representação das Tarefas no back-end
 const TaskSchema =  new Schema({
+    /*
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'User',
+        required: true,
+    },
+    */
     macaddress: {type : String,required: true}, //indentificação do celular
     type: {type : Number, required: true}, //tipo de tarefa
     title: {type: String, required: true}, //titulo da tarefa

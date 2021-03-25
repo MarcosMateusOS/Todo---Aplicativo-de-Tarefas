@@ -29,7 +29,10 @@ const UserSchema = new Schema({
         type:Date,
         default: Date.now,
     },
-    
+    tasks:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Task'
+    }],
     
 
 });
