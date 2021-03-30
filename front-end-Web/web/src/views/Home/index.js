@@ -3,6 +3,7 @@ import * as sty from './styles';
 
 //Componentes
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
     
     <sty.Container> 
       <Header/>
+      <Footer/>
     </sty.Container>
     
   
