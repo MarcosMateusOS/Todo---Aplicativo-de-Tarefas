@@ -29,6 +29,10 @@ const UserSchema = new Schema({
         type:Date,
         default: Date.now,
     },
+    cpf:{
+        type:Date,
+        required:true,
+    },
     tasks:[{
         type: mongoose.Schema.Types.ObjectId,
         ref:'Task'
@@ -36,7 +40,6 @@ const UserSchema = new Schema({
     
 
 });
-
 //Antes de salvar o usuário "usar o pre"
 UserSchema.pre('save', async function(next) {
 
@@ -46,6 +49,7 @@ UserSchema.pre('save', async function(next) {
 
     next();
 });
+
 
 
 module.exports = mongoose.model('User',UserSchema);

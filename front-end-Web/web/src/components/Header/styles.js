@@ -5,7 +5,7 @@ export const Container = styled.div`
 
     width:100%;
     height:70px;
-    background: #2F057A;
+    background: #20295F;;
     display:flex;
     border-bottom: 5px solid #E57512;
     
@@ -26,6 +26,7 @@ export const LeftSide = styled.div`
     img{
         width:100px;
         height:40px;
+        cursor:pointer;
 
         &:hover{
             opacity:0.5;
@@ -45,8 +46,9 @@ export const RightSide = styled.div`
     display:flex;
     align-items:center;
     justify-content:flex-end;
+      
 
-    a{
+    a,button{
         color:#fff;
         font-weight: bold;
         text-decoration:none;
@@ -58,8 +60,12 @@ export const RightSide = styled.div`
 
 
     }
+   
 
     #notification{
+
+        background:none;
+        border:none;
 
         img{
             width:25px;

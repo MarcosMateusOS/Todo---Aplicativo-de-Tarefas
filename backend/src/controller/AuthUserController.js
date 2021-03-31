@@ -8,7 +8,6 @@ const authConfig =  require('../config/auth');
 const UserModel = require('../model/UserModel');
 
 function generateToke(params = {}){
-    
     return jwt.sign(params,authConfig.secret, {
         expiresIn: 86400, //tempo que o token expira
     });

@@ -13,8 +13,10 @@ router.put('/:id',TaskValidation,TaskController.update);
 router.put('/:id/:done',TaskController.done);
 
 
-router.get('/filter/all/:macaddress',TaskController.all);
+
 router.get('/:id',TaskController.show);
+
+router.get('/filter/all/:macaddress',TaskController.all);
 router.get('/filter/late/:macaddress',TaskController.late);
 router.get('/filter/today/:macaddress',TaskController.today);
 router.get('/filter/week/:macaddress',TaskController.week);

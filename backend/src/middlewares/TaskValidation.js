@@ -22,7 +22,6 @@ const TaskValidation =  async (req, resp, next) =>{
     else{
         //Verifica se ah uma tarefa nessa horário
         let exists;     
-
         if(req.params.id){
             exists = await TaskModel
                         .findOne(
