@@ -8,6 +8,10 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 
+import iconCalendar from '../../assets/calendar.png';
+import iconClock from '../../assets/clock.png'
+
+
 
 function Task() {
 
@@ -59,12 +63,39 @@ function Task() {
         </S.Input>
 
         <S.TextArea>
-            <span>Título</span>
-            <textarea rows={5} placeholder="Detalhes da tareafa"/>
+            <span>Detalhes</span>
+            <textarea rows={5} placeholder="Detalhes da Tarefa"/>
         </S.TextArea>
+
+        <S.Input>
+            <span>Data</span>
+            <input type="date" placeholder="Título da Tarefa"></input>
+            
+        </S.Input>
+
+        <S.Input>
+            <span>Hora</span>
+            <input type="time" placeholder="Título da Tarefa"></input>
+           
+        </S.Input>
+
+        <S.Options>
+
+            <div>
+              <input type="checkbox"/>
+              <span>CONCLUÍDO</span>
+            </div>
+
+            <button type="button">EXCLUIR</button>
+
+        </S.Options>
 
 
       </S.Form>
+
+      <S.Save>
+            <button type="button">SALVAR </button>
+      </S.Save>
 
 
       <Footer/>

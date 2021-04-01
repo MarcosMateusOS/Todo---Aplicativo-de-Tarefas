@@ -5,7 +5,7 @@ export const Container = styled.div`
 
     width:100%;
     height:70px;
-    background: #20295F;;
+    background: #20295F;
     display:flex;
     border-bottom: 5px solid #E57512;
     
