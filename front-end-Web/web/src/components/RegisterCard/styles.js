@@ -6,7 +6,7 @@ export const Container = styled.div`
 
    
     width:500px;
-    height:300px;
+    height:560px;
     background:#20295F;
     display:flex;
     align-items:center;
@@ -34,7 +34,10 @@ export const buttonsArea = styled.div`
     width: 75%;
     display:flex;
     margin-top:25px;
-    justify-content:space-between;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
 
 
     button{
@@ -46,6 +49,7 @@ export const buttonsArea = styled.div`
         font-weight: bold;
         padding:20px;
         border-radius:30px;
+        
        
         
         
