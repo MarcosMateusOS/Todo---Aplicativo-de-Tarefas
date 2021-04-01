@@ -6,7 +6,7 @@ Toda a aplicacação possui comunicação entre  o Back-end e o Front-end.
 Login adicionado, funcionalidade implementada por mim, que não possui no projeto principal do curso
 
 ![Tela de Cadastro](https://raw.githubusercontent.com/MarcosMateusOS/Todo---Aplicativo-de-Tarefas/main/PrintsProjeto/cadastro.png)
-Login adicionado, funcionalidade implementada por mim, que não possui no projeto principal do curso
+Cadastro adicionado, funcionalidade implementada por mim, que não possui no projeto principal do curso
 
 ![Task](https://raw.githubusercontent.com/MarcosMateusOS/Todo---Aplicativo-de-Tarefas/main/PrintsProjeto/Task.png)
 Parte do Curso, implementa por mim.
