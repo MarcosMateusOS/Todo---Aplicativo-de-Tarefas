@@ -1,4 +1,4 @@
-const express =  require('express');
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -18,15 +18,25 @@ class UserController{
 
     async register(req,res){
         
-       
-        try{
-            const user = await UserModel.create(req.body);
-            user.password = undefined;
-            return  res.send({ user , token: generateToke({id: user.id})});
-        } catch(err){
+       const{email} = req.body;
 
-            return res.status(400).send({erro:'Falha no registro'});
+        if(await UserModel.findOne({email}))
+            return res.status(400).send({error:'E-mail já cadastrado'});
+        else{
+            const user = new UserModel(req.body);
+
+            await user
+                    .save()
+                    .then(response =>{
+                        return res.status(200).json(response);
+                    })
+                    .catch(error=>{
+                        return res.status(500).json(error);
+                    });
+
+
         }
+       
     
     }
 

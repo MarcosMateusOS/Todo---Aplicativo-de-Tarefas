@@ -1,4 +1,5 @@
 import React,{ useState, useEffect }from 'react';
+import api from '../../services/api';
 import  * as S from './styles'
 
 
@@ -7,26 +8,32 @@ function RegisterCard() {
 
   const[name,setName] = useState();
   const[email,setEmail] = useState();
-  const[firstPassword,setFirst] = useState();
+  const[password,setFirst] = useState();
   const[secondPassword,setSecond] = useState();
-  const[date,setDate] = useState();
-
+  
   function validatePassword(){
 
-    if(firstPassword == secondPassword)
+    if(password == secondPassword)
     {
       return true;
     }else
       return false;
   }
 
-  function register()
-  {
+  async function register()
+  { 
     if(validatePassword())
     {
-      alert('CADASTRO FEITO COM SUCESSo')
+      await api.post('/user/register',{
+        name,
+        email,
+        password
+      }).then(() =>
+        alert('Cadastro feito com sucesso')
+      )
+    
     }else
-    alert('SENHA DIFERENTES')
+      alert('SENHAS DIFERENTES')
 
   }
   return (
@@ -46,17 +53,12 @@ function RegisterCard() {
             onChange={e => setEmail(e.target.value)}
             value={email} 
       />
-      <input 
-            type="date" 
-            placeholder="Data de Nascimento"
-            onChange={e => setDate(e.target.value)}
-            value={date} 
-      />
+     
       <input 
             type="password" 
             placeholder="Senha"
             onChange={e => setFirst(e.target.value)}
-            value={firstPassword} 
+            value={password} 
 
       />
       <input 

@@ -2,8 +2,11 @@ const User = require('../model/UserModel');
 
 const UserValidation =  async (req,resp,next) =>{
 
-    const {name,email,password} = req.body;
+    const { name, email , password } = req.body;
+
+ 
     
+
     if(!name)
         return resp.status(400).json({erro:'Nome é obrigatório'});
     else if(!email)
