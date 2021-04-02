@@ -10,7 +10,7 @@ function RegisterCard() {
   const[email,setEmail] = useState();
   const[password,setFirst] = useState();
   const[secondPassword,setSecond] = useState();
-  
+  const valid;
   function validatePassword(){
 
     if(password == secondPassword)
