@@ -4,13 +4,14 @@ import  * as S from './styles'
 
 
 
+
 function RegisterCard() {
 
   const[name,setName] = useState();
   const[email,setEmail] = useState();
   const[password,setFirst] = useState();
   const[secondPassword,setSecond] = useState();
-  const valid;
+  
   function validatePassword(){
 
     if(password == secondPassword)
