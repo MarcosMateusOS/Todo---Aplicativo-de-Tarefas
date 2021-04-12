@@ -9,8 +9,6 @@ export const Container = styled.div`
     display:flex;
     border-bottom: 5px solid #E57512;
     
-
-
 `;
 
 

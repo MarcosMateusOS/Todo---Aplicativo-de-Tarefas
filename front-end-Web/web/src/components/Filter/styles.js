@@ -30,4 +30,8 @@ export const Container = styled.div`
     &:hover{
         background:#E57512;
     }
+
+    #Alert{
+        background:red;
+    }
 `;

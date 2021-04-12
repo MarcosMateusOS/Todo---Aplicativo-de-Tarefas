@@ -1,7 +1,9 @@
-import React,{ useState, useEffect }from 'react';
+import React,{ useState, useEffect,alert} from 'react';
+import { Alert } from 'reactstrap';
 import  * as S from './styles';
 import api from '../../services/api';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -10,22 +12,30 @@ function LoginCard() {
   const [email,setEmail] = useState();
   const [password,setPassword] = useState();
 
-  async function login(){
-    console.log(email,password)
-    await api.post('/user/authenticate',{
-      email,
-      password
+  
+  const[alert,setAlert] = useState(false);
 
-    }).then(() =>
-      alert('logado com sucesso')
-    )
+  const login = () =>{ 
+    axios({
+      method:'post',
+      data:{
+        useremail:email,
+        password:password
+      },
+      withCredentials :true,
+      url:"http://localhost:8080/user/authenticate"
 
+    }).then((res) => console.log(res));
   }
+  
+  async function signIn() {
+   
+  }
+
   return (
 
     <S.Container>
-
-      
+     
       <input 
             type="text" 
             placeholder="E-mail"
@@ -41,6 +51,14 @@ function LoginCard() {
             
         
       />
+
+      {
+        alert != false? (
+          <Alert 
+            color='Alert'
+         >LOGIN INVALIDO</Alert>
+        ):''
+      }
 
       <S.buttonsArea>
         <button type='button'>
@@ -59,8 +77,13 @@ function LoginCard() {
           </Link>
         </button>
       </S.buttonsArea>
+
+      
         
     </S.Container>
+
+
+
 
   )
    

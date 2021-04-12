@@ -23,8 +23,8 @@ class UserController{
         if(await UserModel.findOne({email}))
             return res.status(400).send({error:'E-mail já cadastrado'});
         else{
-            const user = new UserModel(req.body);
 
+            const user = new UserModel(req.body);
             await user
                     .save()
                     .then(response =>{
@@ -33,8 +33,6 @@ class UserController{
                     .catch(error=>{
                         return res.status(500).json(error);
                     });
-
-
         }
        
     

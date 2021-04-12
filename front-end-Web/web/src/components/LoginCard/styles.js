@@ -25,6 +25,7 @@ export const Container = styled.div`
         font-weight: bold;
         font-size:20px;
     }
+    
 
 
 `;

@@ -9,11 +9,14 @@ import NotFound from '../views/NotFound';
 
 
 
+
 export default function Routes(){
+
+    
 
     return(
 
-        <Router history={history}>
+        <BrowserRouter >
                 <Switch>
 
                     <Route exact path="/login" exact component={Login}/>
@@ -22,6 +25,6 @@ export default function Routes(){
                     <Route component={NotFound}/>
 
                 </Switch>
-        </Router>
+        </BrowserRouter>
     )
 }
