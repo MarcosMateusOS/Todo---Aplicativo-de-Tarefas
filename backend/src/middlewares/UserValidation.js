@@ -13,8 +13,7 @@ const UserValidation =  async (req,resp,next) =>{
         return resp.status(400).json({erro:'Senha obrigatório'});
     else{
 
-        let exists = await User
-                            .findOne(
+        let exists = await users.findOne(
                             {
                                 'email':{'$in':email},
                             });
