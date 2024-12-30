@@ -1,0 +1,7 @@
+api/node_modules
+api/infra/.terraform/*
+api/infra/.terraform.lock.hcl
+api/infra/terraform.tfstate
+api/infra/terraform.tfstate.backup
+api/dist
+api/.env
